@@ -19,7 +19,7 @@ script: "./gradlew clean build"
 before_deploy:
   - zip: -r springboot *
   - mkdir -p deploy
-  - mv springboot.zip deploy/springboot.zip
+  - mv nagagu.zip deploy/nagagu.zip
 
 
 
