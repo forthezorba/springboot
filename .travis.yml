@@ -15,7 +15,7 @@ cache:
 script: "./gradlew clean build"
 
 before_deploy:
-  - zip: -r nagagu *
+  - zip -r nagagu *
   - mkdir -p deploy
   - mv nagagu.zip deploy/nagagu.zip
 
