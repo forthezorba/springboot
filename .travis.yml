@@ -14,14 +14,10 @@ cache:
 
 script: "./gradlew clean build"
 
-
-
 before_deploy:
   - zip: -r nagagu *
   - mkdir -p deploy
   - mv nagagu.zip deploy/nagagu.zip
-
-
 
 deploy:
   - provider: s3
@@ -34,6 +30,9 @@ deploy:
     acl: private
     local_dir: deploy
     wait-until-delpoyed: true
+
+before_install:
+  - chmod +x gradlew
 
 # CI 실행 완료 시 메일로 알람
 notifications:
